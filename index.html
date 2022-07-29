@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oficina</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+    <header>
+        <div class="logo">
+            <h1>Oficina</h1>
+        </div>
+        <nav>
+            <ul>
+                <!-- colocar #id no href redireciona diretamente para o id indicado na página -->
+                <li><a class="select" href="#inicio">Início</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#reformados">Reformados</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="inicio" class="shapedividers_com-5302" data-animation="bottom">
+        <div class="text">
+            <h2 data-animation="right">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt minus in explicabo error.</h2>
+        </div>
+    </main>
+
+    <section class="services" id="servicos">
+        
+        <div class="container">
+            <h2 class="title">Serviços</h2>
+            <div class="services-wrapper">
+                <div>
+                    <div class="service-single top1" data-animation="top">
+                        <img class="img-service" src="images/pintura.jpg" alt="Pintura">
+                        <div class="description">
+                            <h2>Serviço 1</h2>
+                            <p>Non facilis eum illum fuga perspiciatis incidunt omnis in eveniet labore, totam deleniti mollitia modi veritatis!</p>
+                        </div>
+                    </div>
+                    <div class="service-single top2" data-animation="top">
+                        <img class="img-service" src="images/pintura.jpg" alt="Pintura">
+                        <div class="description">
+                            <h2>Serviço 2</h2>
+                            <p>Non facilis eum illum fuga perspiciatis incidunt omnis in eveniet labore, totam deleniti mollitia modi veritatis!</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div class="service-single top3" data-animation="top">
+                        <img class="img-service" src="images/pintura.jpg" alt="Pintura">
+                        <div class="description-services">
+                            <h2>Serviço 3</h2>
+                            <p>Non facilis eum illum fuga perspiciatis incidunt omnis in eveniet labore, totam deleniti mollitia modi veritatis!</p>
+                        </div>
+                    </div>
+                    <div class="service-single top4" data-animation="top">
+                        <img class="img-service" src="images/pintura.jpg" alt="Pintura">
+                        <div class="description-services">
+                            <h2>Serviço 4</h2>
+                            <p>Non facilis eum illum fuga perspiciatis incidunt omnis in eveniet labore, totam deleniti mollitia modi veritatis!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- services -->
+
+    <section class="reformeds" id="reformados">
+        <div class="container">
+            <h2 class="title">Reformados</h2>
+            
+            <div class="carousel" data-animation="bottom">
+                <div data-js="carousel__item" class="carousel__item carousel__item--visible">
+                    <img src="images/carro1.jpg" />
+                </div>
+            
+                <div data-js="carousel__item" class="carousel__item">
+                    <img src="images/carro2.jpg" />
+                </div>
+            
+                <div class="carousel__actions">
+                    <button data-js="carousel__button--prev" aria-label="Slide anterior"><</button>
+            
+                    <button data-js="carousel__button--next" aria-label="Próximo slide">></button>
+                </div>
+
+                <div class="balls">
+                    
+                </div>
+            </div>
+        </div>
+    </section><!-- reformed -->
+
+    <section class="about" id="sobre">
+        <div class="container">
+            <h2 class="title">Sobre</h2>
+            <div class="description-about">
+                <div data-animation="left">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi maxime, dolorem inventore beatae hic aut dolorum quibusdam nobis! Enim quas numquam corporis autem et ratione illo sequi dolorum nostrum pariatur?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, consequatur doloribus quis quaerat iusto modi ad error voluptas nesciunt vel, ipsam cumque deleniti consectetur eaque ea maiores recusandae perferendis iste?</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, est doloribus porro doloremque unde quae? Modi, tempore molestiae quos perspiciatis voluptates consequatur dignissimos provident, officia sed magni labore perferendis dolore.</p>
+
+                </div>
+            </div>
+        </div>
+    </section><!-- about -->
+
+    <section class="contact" id="contato">
+        <div class="container">
+            <h2 class="title">Contato</h2>
+            <div class="contacts-wrapper">
+                <div class="title-contact">
+                    <p>WhatsApp</p>
+                </div>
+                <div data-animation="left" class="contacts">
+                    <a class="email" data-name="E-mail" data-color="red" href="mailto:tecofernandes@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                    <a class="telefone" data-name="Telefone" data-color="blue" href="tel:32999742802"><i class="fa-solid fa-square-phone"></i></a>
+                    <a class="whatsapp" data-name="WhatsApp" data-color="green" href="https://api.whatsapp.com/send?phone=5532999742802" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a class="local" data-name="Localização" data-color="red" href="https://www.google.com.br/maps/place/R.+Artur+Bernardes+Nunes,+209+-+Sao+Domingos,+Santo+Ant%C3%B4nio+do+Aventureiro+-+MG,+36675-000/@-21.6806548,-42.7815932,19z/data=!3m1!4b1!4m5!3m4!1s0xa2bb7ed45943b1:0x8a0af285f93856c!8m2!3d-21.680656!4d-42.781046" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
+                </div>
+    
+                <div class="form-contact">
+                    <h3>Enviar Mensagem</h3>
+                    <form data-animation="right" action="POST">
+                        <input type="text" name="name" placeholder="Seu Nome">
+                        <input type="email" name="email" placeholder="Seu Email">
+                        <input type="tel" name="tel" placeholder="Seu telefone">
+                        <textarea name="message" placeholder="Sua Mensagem"></textarea>
+                        <input type="submit" name="acao" value="Enviar">
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </section><!-- contact -->
+
+    <footer>
+        <div class="container">
+            <p>Todos os direitos reservados <b>Oficina</b></p>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/dc951fd168.js" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,528 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    outline: none;
+}
+
+body{
+    background-color: #ddffe7;
+}
+
+.container{
+    padding: 0 3%;
+
+}
+
+/* Efeito nav */
+
+.headerh{
+    height: 50px;
+}
+
+.h1-less{
+    font-size: 20px;
+}
+
+.li-less{
+    padding: 0 2%;
+    font-size: 16px;
+}
+
+/* Header */
+
+header{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4%;
+    background-color: #28a0b1;
+    transition: .5s;
+    position: fixed;
+    z-index: 4;
+}
+
+header logo{
+    width: 50%;
+}
+
+header .logo h1{
+    color: #ddffe7;
+    transition: .5s;
+}
+
+header nav{
+    width: 50%;
+}
+
+header nav ul{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+header nav ul li{
+    padding: 0 5%;
+    font-size: 17px;
+    transition: .5s;
+}
+
+header nav ul li a{
+    width: 100%;
+    text-decoration: none;
+    color: #ddffe7;
+}
+
+header nav ul li a:hover{
+    color: aquamarine;
+}
+
+header nav ul li a.select{
+    font-weight: bold;
+    color: white;
+    border-bottom: 1px solid white;
+    transition: .1s;
+}
+
+/* Main */
+
+main{
+    background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: right;
+    background-color: #28a0b1;
+    width: 100%;
+    height: 46vw;
+}
+
+main .text{
+    width: 100%;
+    height: 100%;
+}
+
+main .text h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 46vw;
+    width: 100%;
+    max-width: 700px;
+    padding: 5% 10% 5% 5%;
+    background:  linear-gradient( -75deg, transparent 10%, transparent, #28a0b1 50%);
+
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    opacity: 1 !important;
+}
+
+/* Services */
+
+section.services{
+    text-align: center;
+}
+
+.title{
+    font-size: 40px;
+    padding: 20px 0;
+    text-shadow: 1px 1px #28a0b1;
+}
+
+.services .services-wrapper{
+    display: flex;
+}
+
+.services .service-single{
+    margin: 5%;
+    padding: 4%;
+    border-radius: 2%;
+    box-shadow: 2px 2px 20px #40CA8B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.services .service-single .img-service{
+    width: 30%;
+}
+
+.services .service-single h2{
+    padding: 5px 0;
+    /* color: white; */
+    text-shadow: 0 0 4px #40CA8B;
+}
+
+p{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Reformeds */
+section.reformeds{
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Slider */
+
+.carousel {
+    margin: 0 auto;
+    overflow: hidden;
+    max-width: 720px;
+    position: relative;
+}
+
+.carousel .carousel__item,
+.carousel .carousel__item--hidden {
+    display: none;
+}
+
+.carousel .carousel__item img {
+    width: 100%;
+    max-width: 700px;
+    max-height: 370px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #40CA8B;
+    
+}
+
+.carousel .carousel__item--visible {
+    display: block;
+    animation: fadeVisibility 0.5s;
+}
+
+.carousel .carousel__actions {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel .carousel__actions button {
+    border-radius: 50px;
+    border: 0;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    color: #FFF;
+    background-color: #008c9e;
+    /* border: 2px solid #008c9e; */
+}
+
+.carousel .carousel__actions button[data-js="carousel__button--prev"] {
+    margin-left: 20px;
+}
+
+.carousel .carousel__actions button[data-js="carousel__button--next"] {
+    margin-right: 20px;
+}
+
+@keyframes fadeVisibility {
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+    transform: opacity linear;
+}
+}
+
+.carousel .balls{
+    width: 100%;
+    position: relative;
+    top: -30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel .balls .ball{
+    width: 12px;
+    height: 12px;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .8s;
+}
+
+.carousel .balls .ball:hover{
+    background-color: white;
+    border: 1px solid black;
+}
+
+.carousel .balls .ball.checked{
+    background-color: #008c9e;
+    width: 15px;
+    height: 15px;
+}
+
+.carousel .balls .ball:not(:last-child){
+    margin-right: 10px;
+
+}
+
+/* About */
+
+section.about{
+    text-align: center;
+    padding: 50px 0;
+    margin: 50px 0;
+}
+
+.about .description-about{
+    padding: 5% 10%;
+    border-radius: 2%;
+    box-shadow: 2px 2px 20px #40CA8B;
+}
+
+/* Contact */
+
+section.contact{
+    text-align: center;
+}
+
+.contact .contacts-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contact .contacts-wrapper .contacts{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* width: 10%; */
+    position: absolute;
+    
+}
+
+.contact .contacts-wrapper .contacts a{
+    font-size: 40px;
+    color: #28a0b1;
+    text-shadow: 1px 2px 1px black;
+    width: 50px;
+    height: 50px;
+}
+
+.contact .contacts-wrapper .contacts a:hover{
+    font-size: 50px;
+    transition: .6s;
+}
+
+.contact .contacts-wrapper .contacts .email:hover{
+    color: red;
+}
+
+.contact .contacts-wrapper .contacts .telefone:hover{
+    color: blue;
+}
+
+.contact .contacts-wrapper .contacts .whatsapp:hover{
+    color: green;
+}
+
+.contact .contacts-wrapper .contacts .local:hover{
+    color: red;
+}
+
+.contact .contacts-wrapper .form-contact{
+    width: 100%;
+}
+
+.contact .contacts-wrapper .form-contact h3{
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+
+.contact .contacts-wrapper .form-contact form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+.contact .contacts-wrapper .form-contact input{
+    padding: 10px;
+    margin: 10px 0;
+    width: 50%;
+    min-width: 200px;
+    font-size: 16px;
+}
+
+.contact .contacts-wrapper .form-contact input[type='submit']{
+    width: 15%;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 5px;
+    cursor: pointer;
+    color: white;
+    background-color: #28a0b1;
+    border: none;
+    border-radius: 5%;
+    box-shadow: none;
+    min-width: 100px;
+}
+
+.contact .contacts-wrapper .form-contact input[type='submit']:hover{
+    background-color: #008c9e;
+    transition: .5s;
+    box-shadow: 0 0 10px black;
+}
+
+.contact .contacts-wrapper .form-contact textarea{
+    padding: 10px;
+    margin: 10px 0;
+    width: 50%;
+    min-width: 200px;
+    height: 180px;
+    font-size: 18px;
+    resize: none;
+}
+
+.contact .title-contact{
+    padding: 10px;
+    color: white;
+    background-color: red;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    left: 95px;
+    opacity: 0;
+    transition: .8s;
+}
+
+
+
+
+
+
+/* Footer */
+
+footer{
+    width: 100%;
+    height: 60px;
+    color: white;
+    background-color: #008c9e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+footer p{
+    font-size: 16px;
+    font-weight: normal;
+}
+
+
+
+/* Animação */
+[data-animation]{
+    opacity: 0;
+}
+
+[data-animation="top"]{
+    transform: translate3d(0, -100px, 0);
+}
+
+[data-animation="left"]{
+    transform: translate3d(-100px, 0, 0);
+}
+
+[data-animation="right"]{
+    transform: translate3d(100px, 0, 0);
+}
+
+[data-animation="bottom"]{
+    transform: translate3d(0, 100px, 0);
+}
+
+[data-animation].animation{
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: 1s;
+}
+
+/*  
+    TODO: Configurar back-end para envio de mensagem
+    TODO: Responsividade
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Efeito sessões */
+.shapedividers_com-5302{
+    overflow:hidden;
+    position:relative;
+    }
+    .shapedividers_com-5302::before{
+    content:'';
+    font-family:'shape divider from ShapeDividers.com';
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    top: -1px;
+    z-index: 3;
+    pointer-events: none;
+    background-repeat: no-repeat; 
+    background-size: 100% 90px;
+    background-position: 50% 0%;    
+    background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.28 2.17" preserveAspectRatio="none"><path d="M0 .5c3.07.55 9.27-.42 16.14 0 6.88.4 13.75.57 19.14-.11V0H0z" fill="%23fbd8c2"/><path d="M0 1c3.17.8 7.29-.38 10.04-.55 2.75-.17 9.25 1.47 12.67 1.3 3.43-.17 4.65-.84 7.05-.87 2.4-.02 5.52.88 5.52.88V0H0z" opacity=".5" fill="%23fbd8c2"/><path d="M0 1.85c2.56-.83 7.68-.3 11.79-.42 4.1-.12 6.86-.61 9.58-.28 2.73.33 5.61 1.17 8.61 1 3-.19 4.73-.82 5.3-.84V.1H0z" opacity=".5" fill="%23fbd8c2"/></svg>'); 
+    }
+    
+    @media (min-width:768px){
+    .shapedividers_com-5302::before{
+    background-size: 100% 90px;
+    background-position: 50% 0%;   
+    }  
+    }
+    
+    @media (min-width:1025px){
+    .shapedividers_com-5302::before{ 
+    bottom: -0.1vw;
+    left: -0.1vw;
+    right: -0.1vw;
+    top: -0.1vw; 
+    background-size: 100% 69px;
+    background-position: 50% 100%;  
+    background-image: url('data:image/svg+xml;charset=utf8, <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 78"><g fill="%23ddffe7"><path d="M1794 41a1 1 0 000-1h-2c0 1 1 2 2 1zM1791 50a2 2 0 001-3c0-1-2-2-3-1a2 2 0 000 2 2 2 0 002 2zM1785 45a2 2 0 002 1c1-1 2-5 1-6a3 3 0 00-1-2 2 2 0 00-2 0 3 3 0 00-1 1 5 5 0 000 5 3 3 0 001 1zM1824 51c2 2 6-1 5-4a4 4 0 00-6-2 3 3 0 00-2 2 4 4 0 003 4zM1881 25c2 1 4-1 4-3a3 3 0 00-4-2 2 2 0 00-1 2 3 3 0 001 3zM1865 55a1 1 0 000-1c1-1-1-1-1-1a1 1 0 00-1 1l2 1zM1461 50a2 2 0 001-3c0-1-2-2-3-1a2 2 0 000 2 2 2 0 002 2zM1464 41a1 1 0 000-1h-2c0 1 1 2 2 1zM1455 45a2 2 0 002 1c1-1 2-5 1-6a2 2 0 00-1-2 2 2 0 00-2 0 3 3 0 00-1 1 5 5 0 000 5 3 3 0 001 1zM1551 25c2 1 4-1 4-3a3 3 0 00-4-2 2 2 0 00-1 2 3 3 0 001 3zM1494 51c2 2 6-1 5-4a4 4 0 00-6-2 3 3 0 00-2 2 4 4 0 003 4zM1535 55a1 1 0 000-1c1-1-1-1-1-1a1 1 0 00-1 1l2 1zM1121 50a2 2 0 001-3c0-1-2-2-3-1a2 2 0 000 2 2 2 0 002 2zM1115 45a2 2 0 001 1c2-1 3-5 2-6a2 2 0 00-1-2 2 2 0 00-2 0 3 3 0 00-1 1 5 5 0 000 5 3 3 0 001 1zM1124 41a1 1 0 000-1h-2c-1 1 1 2 2 1zM1153 51c3 2 7-1 6-4a4 4 0 00-7-2 3 3 0 00-1 2 4 4 0 002 4zM1211 25c2 1 4-1 4-3a3 3 0 00-5-2 2 2 0 00-1 2 3 3 0 002 3zM1195 55a1 1 0 000-1c1-1-1-1-1-1a1 1 0 00-2 1l3 1z"/><path d="M87 78h1913V53c-5-1-13-15-13-35 0-5 1-8-2-9h-5c-5 3 0 9-2 13 0 3-4 7-7 4l-3-3c-2-1-4 1-4 3-1 4 3 19-2 25-4 5-9 6-12 4-7-3-19-2-23-9-3-4-3-25 1-30 1-2 3-4 3-7 0-5-5-9-10-9a8 8 0 00-3 0c-6 2-9 9-4 15 3 3 5 14 5 21 0 12-7 22-14 30l-14-14a12 12 0 01-2-10c1-6-1-12-7-12-5 1-7 5-6 9a13 13 0 002 5c2 4-2 13-7 15a13 13 0 01-14-3c-4-4-3-8-3-12 0-22 2-27 2-33 0-3-2-7-5-7-7-2-11 2-11 9 1 8 4 10 3 28 0 2-2 4-3 3-2-1-1-6-1-8a4 4 0 00-5-3 4 4 0 00-3 3v10c2 8-5 15-15 13-8-1-12-8-13-25l2-6a6 6 0 00-2-9 9 9 0 00-7-1c-4 2-4 7-3 10a26 26 0 002 3 10 10 0 012 5l-1 12a63 63 0 01-9 15c-8-9-16-12-16-18 1-3 1-6-1-8h-6c-2 2-1 4-1 6 0 5-1 8-6 8-9-2-7-8-7-13l-1-5c-1-1-2 0-3 1-2 1-3 3-5 2-3-1-2-6-1-8a42 42 0 000-7c0-4-4-8-9-8s-8 5-7 9l1 13c-1 6-4 8-7 8-6 0-6-6-10-4-4 1-2 6-4 10-1 1-3 0-4-1s-1-4-2-4c-2 0-1 3-2 5s-3 3-7 2c-5 0-4-7-3-8a5 5 0 011-2c5-5 2-11-5-11-5-1-10 5-7 10s2 10 0 16a3 3 0 00-1-2 9 9 0 00-4-1c-5-1-13-15-13-35 0-5 1-8-2-9h-5c-5 3 0 10-1 13s-5 7-8 4l-3-3c-2-1-4 1-4 3-1 4 3 19-2 25-4 5-9 6-12 4-7-2-19-1-23-9-3-4-3-25 1-30 1-2 3-4 3-7 0-4-5-9-10-9a8 8 0 00-3 0c-6 2-9 9-4 15 3 3 5 14 5 21 0 12-7 22-14 30l-14-14a12 12 0 01-2-10c1-6-1-12-7-12-5 1-7 5-6 9a13 13 0 002 5c2 4-2 13-7 15a13 13 0 01-14-3c-4-4-3-8-3-12 0-22 2-27 2-33 0-3-2-7-5-7-6-2-11 2-10 9 0 8 3 10 3 28 0 2-2 5-4 3-2-1 0-6-1-8a4 4 0 00-5-3 4 4 0 00-3 3c-1 4 0 7 1 10 1 8-6 15-16 13-8-1-12-8-12-25l2-6a6 6 0 00-3-9 9 9 0 00-7 0c-3 1-4 6-3 9a27 27 0 003 3 10 10 0 011 5l-1 12a63 63 0 01-9 15c-8-9-16-12-16-18 1-3 1-6-1-8h-6c-2 2-1 4-1 6 0 5-1 8-6 8-9-2-7-8-7-13l-1-5c-1-1-2 0-4 1-1 1-2 3-4 2-3-1-2-6-1-8a42 42 0 000-7c0-4-4-8-9-8s-8 5-7 9l1 13c-1 6-4 8-7 8-6 0-6-6-10-4-4 1-2 6-4 10-1 1-3 0-4-1s-1-4-2-4c-2 0-1 3-2 5s-4 3-7 2c-5 0-4-7-3-8a5 5 0 011-2c4-5 2-11-5-11-5-1-11 5-8 10 6 10 0 19-6 27l-3-7c0-2 1-5-2-6a9 9 0 00-3-1c-5-1-13-15-13-35 0-5 0-8-2-9h-5c-5 3 0 10-2 13-1 3-4 7-7 4l-3-3c-2-1-4 1-4 3-1 4 3 19-2 25-4 5-9 6-12 4-7-2-19-1-24-9-2-4-2-25 1-30 2-2 4-4 4-7-1-4-5-9-10-9a8 8 0 00-3 0c-6 2-9 9-4 15 3 3 5 14 5 21 0 12-7 22-14 30l-14-14a12 12 0 01-3-10c2-6 0-12-6-12-5 1-7 5-6 9a13 13 0 002 5c2 4-2 13-7 15a13 13 0 01-14-3c-4-4-4-8-4-12 0-22 3-27 3-33 0-3-2-7-5-7-7-2-11 2-11 9 1 8 4 10 3 28 0 2-2 4-3 3-3-1-1-6-2-8a4 4 0 00-4-3 4 4 0 00-3 3v10c1 8-6 15-15 13-8-1-12-8-13-25l2-6a6 6 0 00-3-9 9 9 0 00-6-1c-4 2-4 7-3 10a27 27 0 002 3 10 10 0 012 5c0 5 0 9-2 12a63 63 0 01-8 15c-8-9-16-12-16-18 0-3 1-6-1-8h-6c-2 2-1 4-1 6 0 5-1 8-6 8-9-2-7-8-7-13l-1-5c-1-1-3 0-4 1s-2 3-4 2c-3-1-2-6-2-8a44 44 0 001-7c0-4-4-8-9-8s-8 5-7 9l1 13c-1 6-4 8-7 8-6 0-6-6-10-4-4 1-2 6-4 10-1 1-3 0-4-1s-1-4-2-4c-2 0-1 3-2 5s-4 3-7 2c-5 0-4-7-3-8a5 5 0 011-2c4-5 2-11-5-11-5-1-11 5-8 10 5 8 1 16-4 23-5-7-9-15-4-23 3-5-2-11-8-10-6 0-9 6-4 11a5 5 0 011 2c0 1 1 8-3 9-4 0-6-1-7-3s0-5-2-5-1 2-2 4-3 2-4 1c-3-4-1-9-4-10-5-2-4 4-11 4-3 0-6-2-6-8-1-3 0-10 1-13 0-4-3-8-8-9s-9 4-9 8a44 44 0 001 7c0 2 1 7-1 8-3 1-3-1-5-2-1-1-3-2-4-1v5c-1 5 2 11-8 13-4 0-5-3-5-8 0-2 1-4-2-6h-5c-2 2-2 5-2 8 1 6-7 9-15 18a63 63 0 01-9-15c-1-3-2-7-1-12a10 10 0 011-5 27 27 0 002-3c2-3 1-8-3-9a9 9 0 00-6 0 6 6 0 00-3 9l2 6c0 17-4 24-12 25-10 2-17-5-16-13l1-10a4 4 0 00-3-3 4 4 0 00-5 3c-1 2 1 7-1 8s-4-1-4-3c0-18 2-20 3-28 1-7-4-11-11-9-2 0-5 4-5 7 0 6 3 11 3 33 0 4 1 8-3 12a13 13 0 01-14 3c-5-2-10-11-7-15a13 13 0 002-5c1-4-1-8-6-9-6 0-8 6-7 12a12 12 0 01-3 10l-14 14c-7-8-13-18-14-30 0-7 3-18 5-21 5-6 3-13-4-15a8 8 0 00-2 0c-5 0-10 5-10 9 0 3 2 5 3 7 3 5 3 26 1 30-5 8-16 7-23 9-3 2-8 1-12-4-5-6-2-21-2-25-1-2-2-4-4-3l-3 3c-3 3-7-1-8-4s4-10-1-13h-5c-3 1-3 4-2 9 0 20-8 34-13 35a9 9 0 00-4 1c-2 1-1 4-1 6l-3 7c-6-8-13-17-7-27 3-5-2-11-8-10-6 0-9 6-5 11a5 5 0 012 2c0 1 1 8-4 8-3 1-6 0-6-2-1-2 0-5-2-5s-1 2-2 4-3 2-4 1c-3-4-1-9-4-10-5-2-4 4-11 4-3 0-6-2-6-8-1-3 0-10 1-13 0-4-3-8-8-9s-9 4-9 8a42 42 0 001 7c0 2 1 7-2 8-2 1-3-1-4-2s-3-2-4-1l-1 5c0 5 3 11-7 13-4 0-6-3-6-8 0-2 2-4-1-6h-6l-1 8c0 6-7 9-16 18a63 63 0 01-8-15c-1-3-2-7-1-12a10 10 0 011-5 27 27 0 002-3c2-3 1-8-3-9a9 9 0 00-6 0 6 6 0 00-3 9l2 6c-1 17-4 24-13 25-9 2-16-5-15-13l1-9a4 4 0 00-4-4 4 4 0 00-4 3c-1 2 1 7-1 9-2 1-4-2-4-3-1-19 2-21 3-29 1-7-4-11-11-9-2 1-5 4-5 7 0 6 3 11 3 33 0 4 1 8-4 12a13 13 0 01-13 3c-5-2-10-11-7-15a13 13 0 002-4c1-5-1-9-6-9-6-1-9 5-7 11a12 12 0 01-3 10l-14 14c-7-8-13-18-14-30 0-7 3-18 5-21 5-6 2-13-4-15a8 8 0 00-2 0c-5 0-10 5-10 9 0 3 2 5 3 7 3 5 3 26 1 30-5 8-16 7-23 9-3 2-9 1-12-4-5-6-2-21-3-25 0-2-1-4-4-3l-3 3c-3 3-6-1-7-4s3-10-1-13h-5c-3 1-3 4-3 9 1 20-7 34-12 35a9 9 0 00-4 1 3 3 0 00-1 2c-3-6-3-11 0-16s-2-11-8-10c-6 0-9 6-5 11a5 5 0 012 2c0 1 1 8-4 8-3 1-6 0-6-2-1-2 0-5-2-5s-1 2-2 4-3 2-4 1c-3-4-1-9-4-10-5-2-4 4-11 4-3 0-6-2-6-8-1-3 0-10 1-13 0-4-3-8-8-9s-9 4-9 8a42 42 0 001 7c0 2 1 7-2 8-2 1-3-1-4-2s-3-2-4-1l-1 5c0 5 3 11-7 13-4 0-6-3-6-8 0-2 2-4-1-6h-6l-1 8c0 6-7 9-16 18a63 63 0 01-8-15c-1-3-2-7-1-12a10 10 0 011-5 26 26 0 002-3c2-3 1-8-3-9a9 9 0 00-6 0 6 6 0 00-3 9l2 6c-1 17-4 24-13 25-9 2-16-5-15-13l1-10a4 4 0 00-4-3 4 4 0 00-4 3c-1 2 1 7-1 8s-4-1-4-3c-1-18 2-20 3-28 1-7-4-11-11-9-2 0-5 4-5 7 0 6 3 11 3 33 0 4 1 8-4 12a13 13 0 01-13 3c-5-2-10-11-7-15a13 13 0 002-5c1-4-1-8-6-9-6 0-9 6-7 12a12 12 0 01-3 10L95 66c-7-8-13-18-14-30 0-7 3-18 5-21 5-6 2-13-4-15a8 8 0 00-2 0c-5 0-10 5-10 9 0 3 2 5 3 7 3 5 3 26 1 30-5 8-16 7-23 9-4 2-9 1-12-4-5-6-2-21-3-25 0-2-1-4-4-3l-3 3c-3 3-6-1-7-4s3-10-1-13h-5c-3 1-3 4-3 9 0 20-7 34-12 35H0v25z"/><path d="M206 40a1 1 0 001 1l2-1a1 1 0 00-1 0h-2zM208 47a2 2 0 001 3 2 2 0 003-2 2 2 0 00-1-2c-1-1-3 0-3 1zM214 46a2 2 0 001-1 3 3 0 001-1 5 5 0 000-5 3 3 0 00-1-1 2 2 0 00-2 0 3 3 0 00-1 2c0 1 0 5 2 6zM135 55l3-1a1 1 0 00-1-1l-2 1a1 1 0 000 1zM119 25a3 3 0 002-3 2 2 0 00-1-2 3 3 0 00-4 2c-1 2 1 4 3 3zM177 51a4 4 0 002-4 3 3 0 00-1-2 4 4 0 00-6 2c-1 3 2 6 5 4zM449 25a3 3 0 002-3 2 2 0 00-1-2 3 3 0 00-4 2c-1 2 1 4 3 3zM465 55l3-1a1 1 0 00-1-1l-2 1a1 1 0 000 1zM536 40a1 1 0 001 1l2-1a1 1 0 00-1 0h-2zM544 46a2 2 0 001-1 3 3 0 001-1 5 5 0 000-5 3 3 0 00-1-1 2 2 0 00-2 0 2 2 0 00-1 2c0 1 0 5 2 6zM507 51a4 4 0 002-4 3 3 0 00-1-2 4 4 0 00-6 2c-1 3 2 6 5 4zM538 47a2 2 0 001 3 2 2 0 003-2 2 2 0 00-1-2c-1-1-3 0-3 1zM876 40a1 1 0 001 1c1 1 2 0 2-1h-3zM884 46a2 2 0 002-1 3 3 0 001-1 5 5 0 00-1-5 3 3 0 00-1-1 2 2 0 00-2 0 2 2 0 00-1 2c0 1 0 5 2 6zM878 47a2 2 0 001 3 2 2 0 003-2 2 2 0 000-2c-2-1-4 0-4 1zM805 55l3-1a1 1 0 00-1-1l-2 1a1 1 0 000 1zM847 51a4 4 0 002-4 3 3 0 00-1-2 4 4 0 00-6 2c-1 3 2 6 5 4zM789 25a3 3 0 002-3 2 2 0 00-1-2 3 3 0 00-4 2c-1 2 1 4 3 3z"/></g></svg>'); 
+    }
+    }
+    @media (min-width:2100px){
+    .shapedividers_com-5302::before{
+    background-size: 100% calc(2vw + 69px);
+    }
+    }    
