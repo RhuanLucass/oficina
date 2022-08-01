@@ -174,12 +174,14 @@ section.reformeds{
     margin: 0 auto;
     overflow: hidden;
     max-width: 720px;
+    height: 460px;
     position: relative;
 }
 
 .carousel .carousel__item,
 .carousel .carousel__item--hidden {
     display: none;
+    height: 460px;
 }
 
 .carousel .carousel__item img {
@@ -193,7 +195,9 @@ section.reformeds{
 }
 
 .carousel .carousel__item--visible {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     animation: fadeVisibility 0.5s;
 }
 
@@ -263,13 +267,10 @@ section.reformeds{
 
 .carousel .balls .ball.checked{
     background-color: #008c9e;
-    width: 15px;
-    height: 15px;
 }
 
 .carousel .balls .ball:not(:last-child){
     margin-right: 10px;
-
 }
 
 /* About */
@@ -462,7 +463,6 @@ footer p{
 }
 
 /*  
-    TODO: Configurar back-end para envio de mensagem
     TODO: Responsividade
 */
 

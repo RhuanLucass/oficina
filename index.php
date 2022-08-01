@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <?php
+        define('HOME', 'http://localhost/Projetos%20Novos/oficina/');
+    ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oficina</title>
+    <base id="urlHome" href="<?=HOME?>">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="<?=HOME?>css/style.css">
 </head>
     <header>
         <div class="logo">
@@ -82,26 +86,17 @@
         <div class="container">
             <h2 class="title">Reformados</h2>
             
-            <div class="carousel" data-animation="bottom">
-                <div data-js="carousel__item" class="carousel__item carousel__item--visible">
-                    <img src="images/carro1.jpg" />
-                </div>
-            
-                <div data-js="carousel__item" class="carousel__item">
-                    <img src="images/carro2.jpg" />
-                </div>
-            
+            <div class="carousel" id="carousel" data-animation="bottom">
+                
                 <div class="carousel__actions">
                     <button data-js="carousel__button--prev" aria-label="Slide anterior"><</button>
-            
+
                     <button data-js="carousel__button--next" aria-label="Próximo slide">></button>
                 </div>
 
-                <div class="balls">
-                    
-                </div>
-            </div>
-        </div>
+                <div class="balls"></div>
+                        </div>
+                    </div>
     </section><!-- reformed -->
 
     <section class="about" id="sobre">
@@ -126,18 +121,18 @@
                     <p>WhatsApp</p>
                 </div>
                 <div data-animation="left" class="contacts">
-                    <a class="email" data-name="E-mail" data-color="red" href="mailto:tecofernandes@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-                    <a class="telefone" data-name="Telefone" data-color="blue" href="tel:32999742802"><i class="fa-solid fa-square-phone"></i></a>
-                    <a class="whatsapp" data-name="WhatsApp" data-color="green" href="https://api.whatsapp.com/send?phone=5532999742802" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a class="local" data-name="Localização" data-color="red" href="https://www.google.com.br/maps/place/R.+Artur+Bernardes+Nunes,+209+-+Sao+Domingos,+Santo+Ant%C3%B4nio+do+Aventureiro+-+MG,+36675-000/@-21.6806548,-42.7815932,19z/data=!3m1!4b1!4m5!3m4!1s0xa2bb7ed45943b1:0x8a0af285f93856c!8m2!3d-21.680656!4d-42.781046" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
+                    <a class="email" data-name="E-mail" data-color="red" href="#"><i class="fa-solid fa-envelope"></i></a>
+                    <a class="telefone" data-name="Telefone" data-color="blue" href="#"><i class="fa-solid fa-square-phone"></i></a>
+                    <a class="whatsapp" data-name="WhatsApp" data-color="green" href="#" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a class="local" data-name="Localização" data-color="red" href="#" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
                 </div>
     
                 <div class="form-contact">
                     <h3>Enviar Mensagem</h3>
-                    <form data-animation="right" action="POST">
-                        <input type="text" name="name" placeholder="Seu Nome">
+                    <form data-animation="right" method="POST" action="php/contact.php">
+                        <input type="text" name="name" placeholder="Seu Nome ">
                         <input type="email" name="email" placeholder="Seu Email">
-                        <input type="tel" name="tel" placeholder="Seu telefone">
+                        <input type="tel" name="tel" placeholder="Seu telefone (Opcional)">
                         <textarea name="message" placeholder="Sua Mensagem"></textarea>
                         <input type="submit" name="acao" value="Enviar">
                     </form>
@@ -154,6 +149,7 @@
     </footer>
 
     <script src="https://kit.fontawesome.com/dc951fd168.js" crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
+    <script src="<?=HOME?>js/ajax.js"></script>
+    <script src="<?=HOME?>js/script.js"></script>
 </body>
 </html>

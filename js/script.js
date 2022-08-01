@@ -149,97 +149,99 @@ function smoothScrollTo(endX, endY, duration) {
 
 // Slider
 
-const slides = document.querySelectorAll('[data-js="carousel__item"]');
-const nextButton = document.querySelector('[data-js="carousel__button--next"]');
-const prevButton = document.querySelector('[data-js="carousel__button--prev"]');
-const carousel = document.querySelector('.carousel');
+function addSlider(){
+    const slides = document.querySelectorAll('[data-js="carousel__item"]');
+    const nextButton = document.querySelector('[data-js="carousel__button--next"]');
+    const prevButton = document.querySelector('[data-js="carousel__button--prev"]');
+    const carousel = document.querySelector('.carousel');
 
-let currentSlideIndex = 0;
-const lastSlideIndex = slides.length - 1;
-var myTimer;
-var current = 0;
+    var countImg = 10;
+    let currentSlideIndex = 0;
+    const lastSlideIndex = slides.length - 1;
+    var myTimer;
+    var current = 0;
 
-function manipulateSlidesClasses(currentSlideIndex){
-    slides.forEach(slide => slide.classList.remove('carousel__item--visible'));
-    slides[currentSlideIndex].classList.add('carousel__item--visible');
+    function manipulateSlidesClasses(currentSlideIndex){
+        slides.forEach(slide => slide.classList.remove('carousel__item--visible'));
+        slides[currentSlideIndex].classList.add('carousel__item--visible');
 
-    clearInterval(myTimer);
+        clearInterval(myTimer);
+        nextAuto();
+    }
+
+    nextButton.addEventListener('click', next);
+
+    function next(){
+        (currentSlideIndex === lastSlideIndex) ? currentSlideIndex = 0 : currentSlideIndex++;
+        // manipulateSlidesClasses(currentSlideIndex);
+        slide(currentSlideIndex);
+        
+    }
+
+    prevButton.addEventListener('click', prev);
+
+    function prev(){
+        (currentSlideIndex === 0) ? currentSlideIndex = lastSlideIndex : currentSlideIndex--;
+        // manipulateSlidesClasses(currentSlideIndex);
+        slide(currentSlideIndex);
+
+        
+    }
+
+    function nextAuto(){
+        myTimer = setInterval(() => {
+            next();
+        }, 3000);
+    }
     nextAuto();
-}
 
-nextButton.addEventListener('click', next);
-
-function next(){
-    (currentSlideIndex === lastSlideIndex) ? currentSlideIndex = 0 : currentSlideIndex++;
-    // manipulateSlidesClasses(currentSlideIndex);
-    slide(currentSlideIndex);
-    
-}
-
-prevButton.addEventListener('click', prev);
-
-function prev(){
-    (currentSlideIndex === 0) ? currentSlideIndex = lastSlideIndex : currentSlideIndex--;
-    // manipulateSlidesClasses(currentSlideIndex);
-    slide(currentSlideIndex);
-
-    
-}
-
-function nextAuto(){
-    myTimer = setInterval(() => {
-        next();
-    }, 3000);
-}
-nextAuto();
-
-// Balls slider
-const balls = document.querySelector('.reformeds .balls');
-const lengthImg = document.querySelectorAll('.reformeds .carousel__item').length;
+    // Balls slider
+    const balls = document.querySelector('.reformeds .balls');
+    const lengthImg = document.querySelectorAll('.reformeds .carousel__item').length;
 
 
 
-const image = document.getElementById(current);
+    const image = document.getElementById(current);
 
-for(let i = 0; i < lengthImg; i++){
-    const div = document.createElement('div');
-    div.id = i;
-    div.classList.add('ball');
+    for(let i = 0; i < lengthImg; i++){
+        const div = document.createElement('div');
+        div.id = i;
+        div.classList.add('ball');
 
-    balls.appendChild(div);
-}
+        balls.appendChild(div);
+    }
 
-document.getElementById('0').classList.add('checked');
+    document.getElementById('0').classList.add('checked');
 
-const pos = document.querySelectorAll('.reformeds .balls .ball');
+    const pos = document.querySelectorAll('.reformeds .balls .ball');
 
-pos.forEach(element => element.addEventListener('click', clickBalls));
+    pos.forEach(element => element.addEventListener('click', clickBalls));
 
-function clickBalls(){
-    // atual = this.id;
-    // slide();
-    const id = this.id;
-    current = id;
-    // const ball = document.getElementById(id);
-    // document.querySelector('.checked').classList.remove('checked');
-    // ball.classList.add('checked')
-    
-    // manipulateSlidesClasses(current);
+    function clickBalls(){
+        // atual = this.id;
+        // slide();
+        const id = parseInt(this.id);
+        current = id;
+        // const ball = document.getElementById(id);
+        // document.querySelector('.checked').classList.remove('checked');
+        // ball.classList.add('checked')
+        
+        // manipulateSlidesClasses(current);
+        slide(current);
+    }
+
+    function slide(current){
+        if(current >= lengthImg)
+            current = 0;
+        else if(current < 0)
+            current = lengthImg - 1;
+
+        document.querySelector('.checked').classList.remove('checked');
+        manipulateSlidesClasses(current);
+        document.getElementById(current).classList.add('checked');
+    }
     slide(current);
 }
-
-function slide(current){
-    if(current >= lengthImg)
-        current = 0;
-    else if(current < 0)
-        current = lengthImg - 1;
-    
-    document.querySelector('.checked').classList.remove('checked');
-    manipulateSlidesClasses(current);
-    document.getElementById(current).classList.add('checked');
-}
-slide(current);
-
 
 
 
@@ -259,10 +261,35 @@ function showDescription(){
     
 
         description.childNodes[1].innerHTML = dataName;
-        description.style.backgroundColor  = dataColor;
+        description.style.backgroundColor = dataColor;
         description.style.opacity = '1';
 }
 
 function hideDescription(){
     description.style.opacity = '0';
 }
+
+
+
+
+// Adicionando imagens de Reformados dinamicamente
+
+function addImages(objJson){
+    const carouselDynamic = document.getElementById('carousel');
+    let append = '';
+    objJson.forEach(element => {
+        append += `
+        <div data-js="carousel__item" class="carousel__item carousel__item--visible">
+            <img src="`+element.substr(1)+`" />
+        </div>
+        `;
+    });
+
+    
+    
+    carouselDynamic.insertAdjacentHTML("afterbegin", append);
+    
+    addSlider();
+}
+
+
