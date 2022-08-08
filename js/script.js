@@ -1,6 +1,6 @@
 // Animação menu
 const header = document.querySelector('header');
-const h1 = document.querySelector('header .logo h1');
+const title = document.querySelector('header .logo h1');
 const li = document.querySelectorAll('header nav ul li');
 const menu = document.querySelectorAll('header ul li a[href^="#"]');
 
@@ -10,11 +10,11 @@ window.addEventListener('scroll', navScroll);
 function navScroll(e){
     if(window.scrollY > 0){
         header.classList.add('headerh');
-        h1.classList.add('h1-less');
+        title.classList.add('h1-less');
         li.forEach(element => element.classList.add('li-less'));
     }else{
         header.classList.remove('headerh');
-        h1.classList.remove('h1-less');
+        title.classList.remove('h1-less');
         li.forEach(element => element.classList.remove('li-less'));
     }
 }
@@ -23,9 +23,9 @@ function navScroll(e){
 
 // Animação main
 const main = document.querySelector('main');
-const h2 = document.querySelector('main .text h2');
+const h1 = document.querySelector('main .text h1');
 main.classList.add('animation');
-h2.classList.add('animation');
+h1.classList.add('animation');
 
 
 // Animação Aparecer
@@ -90,7 +90,7 @@ function scrollId(e){
     e.preventDefault();
     const element = e.target;
 
-    const to = getScrollTop(element) - 40;
+    const to = getScrollTop(element) - 45;
 
     scrollToPosition(to);
 
@@ -277,19 +277,64 @@ function hideDescription(){
 function addImages(objJson){
     const carouselDynamic = document.getElementById('carousel');
     let append = '';
+    let count = 0;
     objJson.forEach(element => {
-        append += `
-        <div data-js="carousel__item" class="carousel__item carousel__item--visible">
-            <img src="`+element.substr(1)+`" />
-        </div>
-        `;
+        if(count < 15){
+            append += `
+            <div data-js="carousel__item" class="carousel__item carousel__item--visible">
+                <img src="`+element.substr(1)+`" />
+            </div>
+            `;
+        }
+        count++;
     });
-
     
-    
-    carouselDynamic.insertAdjacentHTML("afterbegin", append);
+    carouselDynamic.insertAdjacentHTML("afterbegin", append); //Inserindo antes do conteúdo da div
     
     addSlider();
 }
 
 
+
+// Botão mobile
+const icon = document.querySelector('.icon-bars');
+const bar = document.querySelector('.bar');
+const barTop = document.querySelector('.bar-top');
+const barBottom = document.querySelector('.bar-bottom');
+const mobile = document.querySelector('.mobile');
+const overlay = document.querySelector('.overlay');
+
+icon.addEventListener('click', transformIcon);
+
+function transformIcon(e){
+    e.preventDefault;
+
+    if(!bar.classList.contains('rotate')){
+        bar.classList.add('rotate');
+        barTop.classList.add('rotate-top');
+        barBottom.classList.add('rotate-bottom');
+        mobile.classList.toggle('mobile-toggle');
+        overlay.style.display = 'block';
+    }
+    else{
+        bar.classList.remove('rotate');
+        barTop.classList.remove('rotate-top');
+        barBottom.classList.remove('rotate-bottom');
+        mobile.classList.toggle('mobile-toggle');
+        overlay.style.display = 'none';
+    }
+}
+
+const links = document.querySelectorAll('.mobile li a');
+
+links.forEach(link => link.addEventListener('click', hideMenu));
+
+function hideMenu(){
+    bar.classList.remove('rotate');
+    barTop.classList.remove('rotate-top');
+    barBottom.classList.remove('rotate-bottom');
+    mobile.classList.toggle('mobile-toggle');
+    overlay.style.display = 'none';
+}
+
+overlay.addEventListener('click', hideMenu);

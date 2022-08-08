@@ -8,21 +8,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oficina</title>
-    <base id="urlHome" href="<?=HOME?>">
+    <!-- <base id="urlHome" href="<?=HOME?>"> -->
 
     <!-- Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="<?=HOME?>css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+<body>
+    <div class="overlay"></div>
     <header>
         <div class="logo">
             <h1>Oficina</h1>
         </div>
-        <nav>
-            <ul>
+        <nav class="desktop">
+            <ul >
                 <!-- colocar #id no href redireciona diretamente para o id indicado na página -->
                 <li><a class="select" href="#inicio">Início</a></li>
                 <li><a href="#servicos">Serviços</a></li>
@@ -31,11 +36,27 @@
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
+
+        <nav class="mobile">
+            <ul>
+                <li><a class="select" href="#inicio">Início</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#reformados">Reformados</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+        
+        <div class="icon-bars">
+            <span class="bar-top"></span>
+            <span class="bar"></span>
+            <span class="bar-bottom"></span>
+        </div>
     </header>
 
-    <main id="inicio" class="shapedividers_com-5302" data-animation="bottom">
+    <main id="inicio" class="shapedividers_com-6916" data-animation="bottom">
         <div class="text">
-            <h2 data-animation="right">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt minus in explicabo error.</h2>
+            <h1 data-animation="right">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h1>
         </div>
     </main>
 
@@ -44,7 +65,7 @@
         <div class="container">
             <h2 class="title">Serviços</h2>
             <div class="services-wrapper">
-                <div>
+                <div class="aux">
                     <div class="service-single top1" data-animation="top">
                         <img class="img-service" src="images/pintura.jpg" alt="Pintura">
                         <div class="description">
@@ -62,17 +83,17 @@
                 </div>
 
 
-                <div>
+                <div class="aux">
                     <div class="service-single top3" data-animation="top">
                         <img class="img-service" src="images/pintura.jpg" alt="Pintura">
-                        <div class="description-services">
+                        <div class="description">
                             <h2>Serviço 3</h2>
                             <p>Non facilis eum illum fuga perspiciatis incidunt omnis in eveniet labore, totam deleniti mollitia modi veritatis!</p>
                         </div>
                     </div>
                     <div class="service-single top4" data-animation="top">
                         <img class="img-service" src="images/pintura.jpg" alt="Pintura">
-                        <div class="description-services">
+                        <div class="description">
                             <h2>Serviço 4</h2>
                             <p>Non facilis eum illum fuga perspiciatis incidunt omnis in eveniet labore, totam deleniti mollitia modi veritatis!</p>
                         </div>
@@ -87,7 +108,10 @@
             <h2 class="title">Reformados</h2>
             
             <div class="carousel" id="carousel" data-animation="bottom">
-                
+                <div data-js="carousel__item" class="carousel__item carousel__item--visible">
+                    <img src="images/cars/car1.jpg" />
+                </div>
+
                 <div class="carousel__actions">
                     <button data-js="carousel__button--prev" aria-label="Slide anterior"><</button>
 
@@ -95,8 +119,8 @@
                 </div>
 
                 <div class="balls"></div>
-                        </div>
-                    </div>
+            </div>
+        </div>
     </section><!-- reformed -->
 
     <section class="about" id="sobre">
@@ -118,7 +142,7 @@
             <h2 class="title">Contato</h2>
             <div class="contacts-wrapper">
                 <div class="title-contact">
-                    <p>WhatsApp</p>
+                    <p></p>
                 </div>
                 <div data-animation="left" class="contacts">
                     <a class="email" data-name="E-mail" data-color="red" href="#"><i class="fa-solid fa-envelope"></i></a>
@@ -149,7 +173,7 @@
     </footer>
 
     <script src="https://kit.fontawesome.com/dc951fd168.js" crossorigin="anonymous"></script>
-    <script src="<?=HOME?>js/ajax.js"></script>
-    <script src="<?=HOME?>js/script.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
