@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oficina</title>
-    <!-- <base id="urlHome" href="<?=HOME?>"> -->
+    <base id="urlHome" href="<?=HOME?>">
 
     <!-- Fonts -->
 
@@ -18,7 +18,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="<?=HOME?>css/style.css">
 </head>
 <body>
     <div class="overlay"></div>
@@ -108,9 +108,9 @@
             <h2 class="title">Reformados</h2>
             
             <div class="carousel" id="carousel" data-animation="bottom">
-                <div data-js="carousel__item" class="carousel__item carousel__item--visible">
+                <!-- <div data-js="carousel__item" class="carousel__item carousel__item--visible">
                     <img src="images/cars/car1.jpg" />
-                </div>
+                </div> -->
 
                 <div class="carousel__actions">
                     <button data-js="carousel__button--prev" aria-label="Slide anterior"><</button>
@@ -173,7 +173,7 @@
     </footer>
 
     <script src="https://kit.fontawesome.com/dc951fd168.js" crossorigin="anonymous"></script>
-    <script src="js/ajax.js"></script>
-    <script src="js/script.js"></script>
+    <script src="<?=HOME?>js/ajax.js"></script>
+    <script src="<?=HOME?>js/script.js"></script>
 </body>
 </html>

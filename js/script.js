@@ -2,7 +2,7 @@
 const header = document.querySelector('header');
 const title = document.querySelector('header .logo h1');
 const li = document.querySelectorAll('header nav ul li');
-const menu = document.querySelectorAll('header ul li a[href^="#"]');
+const menu = document.querySelectorAll('header .desktop ul li a[href^="#"]');
 
 
 window.addEventListener('scroll', navScroll);
@@ -28,7 +28,7 @@ main.classList.add('animation');
 h1.classList.add('animation');
 
 
-// Animação Aparecer
+// Animação Conteúdos
 const services = document.querySelectorAll('[data-animation]');
 
 window.addEventListener('scroll', downAnimation);
@@ -49,52 +49,35 @@ function downAnimation(){
     });
 }
 
+
+// Select menu
+
 function sectionMenu(windowTop){
     menu.forEach(link => {
         const href = link.getAttribute('href');
         const element = document.querySelector(href);
         const posSection = element.offsetTop;
         const height = element.clientHeight;
-
+        
         if(posSection <= windowTop && (posSection + height) > windowTop){
             menu.forEach(el => el.classList.remove('select'));
             link.classList.add('select');
-
         }
-
     });
 }
-
-// menu.forEach(link => link.addEventListener('click', clickMenu));
-
-// function clickMenu(){
-//     const href = this.getAttribute('href');
-//     const element = document.querySelector(href);
-
-//     console.log(href)
-
-//     menu.forEach(el => el.classList.remove('select'));
-//     link.classList.add('select');
-// }
-
 
 
 
 // Animação de scroll suave
-
-
 
 menu.forEach(value => value.addEventListener('click', scrollId));
 
 function scrollId(e){
     e.preventDefault();
     const element = e.target;
-
     const to = getScrollTop(element) - 45;
 
     scrollToPosition(to);
-
-
 }
 
 function getScrollTop(element){
