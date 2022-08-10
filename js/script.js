@@ -33,16 +33,19 @@ const services = document.querySelectorAll('[data-animation]');
 
 window.addEventListener('scroll', downAnimation);
 
-function downAnimation(){
+function downAnimation(e){
+    e.preventDefault();
     // window.scrollY - pega a distância que está do topo
     // window.innerHeight - pega a altura da janela  
     const windowTop = window.scrollY + (window.innerHeight * 0.85);
+    const scrollTop = window.scrollY + (window.innerHeight * 0.5);
+    
     // console.log(windowTop)
     services.forEach(element => {
         // element.offsetTop - pega a distancia do elemento até o topo
         if(windowTop > element.offsetTop){
             element.classList.add('animation');
-            sectionMenu(windowTop);
+            sectionMenu(scrollTop);
         }
         else
             element.classList.remove('animation');
@@ -51,15 +54,14 @@ function downAnimation(){
 
 
 // Select menu
-
-function sectionMenu(windowTop){
+function sectionMenu(scrollTop){
     menu.forEach(link => {
         const href = link.getAttribute('href');
         const element = document.querySelector(href);
         const posSection = element.offsetTop;
         const height = element.clientHeight;
         
-        if(posSection <= windowTop && (posSection + height) > windowTop){
+        if(posSection <= scrollTop && (posSection + height) > scrollTop){
             menu.forEach(el => el.classList.remove('select'));
             link.classList.add('select');
         }
@@ -69,7 +71,6 @@ function sectionMenu(windowTop){
 
 
 // Animação de scroll suave
-
 menu.forEach(value => value.addEventListener('click', scrollId));
 
 function scrollId(e){
