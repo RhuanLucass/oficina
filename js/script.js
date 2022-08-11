@@ -2,7 +2,8 @@
 const header = document.querySelector('header');
 const title = document.querySelector('header .logo h1');
 const li = document.querySelectorAll('header nav ul li');
-const menu = document.querySelectorAll('header .desktop ul li a[href^="#"]');
+const menuDesktop = document.querySelectorAll('header .desktop ul li a[href^="#"]');
+const menus = document.querySelectorAll('header ul li a[href^="#"]');
 
 
 window.addEventListener('scroll', navScroll);
@@ -55,14 +56,14 @@ function downAnimation(e){
 
 // Select menu
 function sectionMenu(scrollTop){
-    menu.forEach(link => {
+    menuDesktop.forEach(link => {
         const href = link.getAttribute('href');
         const element = document.querySelector(href);
         const posSection = element.offsetTop;
         const height = element.clientHeight;
         
         if(posSection <= scrollTop && (posSection + height) > scrollTop){
-            menu.forEach(el => el.classList.remove('select'));
+            menuDesktop.forEach(el => el.classList.remove('select'));
             link.classList.add('select');
         }
     });
@@ -71,7 +72,7 @@ function sectionMenu(scrollTop){
 
 
 // Animação de scroll suave
-menu.forEach(value => value.addEventListener('click', scrollId));
+menus.forEach(value => value.addEventListener('click', scrollId));
 
 function scrollId(e){
     e.preventDefault();
