@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <?php
-        define('HOME', 'http://localhost/Projetos%20Novos/oficina/');
+        define('HOME', 'http://localhost/Projetos%20Novos/oficina/assets/');
     ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,8 +27,7 @@
             <h1>Oficina</h1>
         </div>
         <nav class="desktop">
-            <ul >
-                <!-- colocar #id no href redireciona diretamente para o id indicado na página -->
+            <ul>
                 <li><a class="select" href="#inicio">Início</a></li>
                 <li><a href="#servicos">Serviços</a></li>
                 <li><a href="#reformados">Reformados</a></li>
@@ -108,10 +107,6 @@
             <h2 class="title">Reformados</h2>
             
             <div class="carousel" id="carousel" data-animation="bottom">
-                <!-- <div data-js="carousel__item" class="carousel__item carousel__item--visible">
-                    <img src="images/cars/car1.jpg" />
-                </div> -->
-
                 <div class="carousel__actions">
                     <button data-js="carousel__button--prev" aria-label="Slide anterior"><</button>
 
@@ -145,7 +140,7 @@
                     <p></p>
                 </div>
                 <div data-animation="left" class="contacts">
-                    <a class="email" data-name="E-mail" data-color="red" href="#"><i class="fa-solid fa-envelope"></i></a>
+                    <a class="email" data-name="E-mail" data-color="red" href="#" target="_blank"><i class="fa-solid fa-envelope"></i></a>
                     <a class="telefone" data-name="Telefone" data-color="blue" href="#"><i class="fa-solid fa-square-phone"></i></a>
                     <a class="whatsapp" data-name="WhatsApp" data-color="green" href="#" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
                     <a class="local" data-name="Localização" data-color="red" href="#" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
@@ -154,10 +149,14 @@
                 <div class="form-contact">
                     <h3>Enviar Mensagem</h3>
                     <form data-animation="right" method="POST" action="php/contact.php">
-                        <input type="text" name="name" placeholder="Seu Nome ">
-                        <input type="email" name="email" placeholder="Seu Email">
-                        <input type="tel" name="tel" placeholder="Seu telefone (Opcional)">
-                        <textarea name="message" placeholder="Sua Mensagem"></textarea>
+                        <label for="input-name" hidden>Nome</label>
+                        <input id="input-name" type="text" name="name" placeholder="Seu Nome" required>
+                        <label for="input-email" hidden>E-mail</label>
+                        <input id="input-email" type="email" name="email" placeholder="Seu Email" required>
+                        <label for="input-tel" hidden>Telefone</label>
+                        <input id="input-tel" type="tel" name="tel" placeholder="Seu telefone (Opcional)">
+                        <label for="input-message" hidden>Mensagem</label>
+                        <textarea id="input-message" name="message" placeholder="Sua Mensagem" required></textarea>
                         <input type="submit" name="acao" value="Enviar">
                     </form>
                 </div>

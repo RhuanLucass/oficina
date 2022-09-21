@@ -64,7 +64,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 0 4%;
-  background-color: #28a0b1;
+  background-color: #004d57;
   transition: 0.5s;
   position: fixed;
   z-index: 10;
@@ -179,7 +179,7 @@ header .mobile {
   position: absolute;
   left: 0;
   top: 50px;
-  background-color: #28a0b1;
+  background-color: #004d57;
   transition: 0.5s;
   overflow-y: hidden;
   z-index: 11;
@@ -220,7 +220,7 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left bottom;
-  background-color: #28a0b1;
+  background-color: #004d57;
   width: 100%;
   height: 100vh;
 }
@@ -245,7 +245,7 @@ main .text h1 {
     rgba(0,0,0,0.7) 50%
   );
 
-  text-shadow: 5px 5px 5px black;
+  text-shadow: 5px 5px 5px #004d57;
   font-size: 40px;
   font-weight: bold;
   font-style: italic;
@@ -263,7 +263,7 @@ section.services {
 .title {
   font-size: 30px;
   padding: 20px 0;
-  text-shadow: 1px 1px #28a0b1;
+  text-shadow: 1px 1px #004d57;
 }
 
 .services .services-wrapper {
@@ -278,7 +278,7 @@ section.services {
   margin: 5%;
   padding: 4%;
   border-radius: 2%;
-  box-shadow: 2px 2px 20px #40ca8b;
+  box-shadow: 2px 2px 20px #004d57;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -291,7 +291,7 @@ section.services {
 
 .services .service-single h2 {
   padding: 2% 0;
-  text-shadow: 0 0 2px #79f5bd;
+  text-shadow: 0 0 2px #004d57;
   font-size: 22px;
 }
 
@@ -333,7 +333,7 @@ section.reformeds {
   max-height: 370px;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 0 10px #40ca8b;
+  box-shadow: 0 0 10px #004d57;
 }
 
 .carousel .carousel__item--visible {
@@ -361,7 +361,7 @@ section.reformeds {
   width: 40px;
   height: 40px;
   color: #fff;
-  background-color: #008c9e;
+  background-color: #004d57;
 }
 
 .carousel .carousel__actions button[data-js="carousel__button--prev"] {
@@ -407,7 +407,7 @@ section.reformeds {
 }
 
 .carousel .balls .ball.checked {
-  background-color: #008c9e;
+  background-color: #004d57;
 }
 
 .carousel .balls .ball:not(:last-child) {
@@ -458,8 +458,8 @@ section.contact {
 
 .contact .contacts-wrapper .contacts a {
   font-size: 35px;
-  color: #28a0b1;
-  text-shadow: 1px 2px 1px black;
+  color: #004d57;
+  text-shadow: 1px 1px 1px black;
   width: 50px;
   height: 50px;
 }
@@ -503,6 +503,11 @@ section.contact {
   margin: 0 auto;
 }
 
+.contact .contacts-wrapper .form-contact label{
+  width: 60%;
+  text-align: left;
+}
+
 .contact .contacts-wrapper .form-contact input {
   padding: 1%;
   margin: 1% 0;
@@ -520,7 +525,7 @@ section.contact {
   padding: 0.5%;
   cursor: pointer;
   color: white;
-  background-color: #28a0b1;
+  background-color: #004d57;
   border: none;
   border-radius: 5%;
   box-shadow: none;
@@ -528,9 +533,9 @@ section.contact {
 }
 
 .contact .contacts-wrapper .form-contact input[type="submit"]:hover {
-  background-color: #008c9e;
+  background-color: #004d57;
   transition: 0.5s;
-  box-shadow: 0 0 10px black;
+  box-shadow: 0 0 10px #004d57;
 }
 
 .contact .contacts-wrapper .form-contact textarea {
@@ -566,7 +571,7 @@ footer {
   width: 100%;
   height: 60px;
   color: white;
-  background-color: #008c9e;
+  background-color: #004d57;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -938,19 +943,19 @@ footer p {
   }
   
   .contact .contacts-wrapper .contacts .email:hover {
-    color: #28a0b1;
+    color: #004d57;
   }
   
   .contact .contacts-wrapper .contacts .telefone:hover {
-    color: #28a0b1;
+    color: #004d57;
   }
   
   .contact .contacts-wrapper .contacts .whatsapp:hover {
-    color: #28a0b1;
+    color: #004d57;
   }
   
   .contact .contacts-wrapper .contacts .local:hover {
-    color: #28a0b1;
+    color: #004d57;
   }
 }
 
