@@ -1,10 +1,21 @@
 const header = document.querySelector("header");
 const title = document.querySelector("header .logo h1");
 const li = document.querySelectorAll("header nav ul li");
-const menuDesktop = document.querySelectorAll(
-  'header .desktop ul li a[href^="#"]'
-  );
+const menuDesktop = document.querySelectorAll('header .desktop ul li a[href^="#"]');
 const menus = document.querySelectorAll('header ul li a[href^="#"]');
+let scrolled = false;
+const services = document.querySelectorAll("[data-animation]");
+
+
+const icon = document.querySelector(".icon-bars");
+const bar = document.querySelector(".bar");
+const barTop = document.querySelector(".bar-top");
+const barBottom = document.querySelector(".bar-bottom");
+const mobile = document.querySelector(".mobile");
+const overlay = document.querySelector(".overlay");
+
+const links = document.querySelectorAll(".mobile li a");
+
   
 // Animação menu
 window.addEventListener("scroll", navScroll);
@@ -24,12 +35,14 @@ function navScroll(e) {
 // Animação main
 const main = document.querySelector("main");
 const h1 = document.querySelector("main .text h1");
-main.classList.add("animation");
-h1.classList.add("animation");
+
+function animationMain(){
+  main.classList.add("animation");
+  h1.classList.add("animation");
+}
+animationMain();
 
 // Animação Conteúdos
-const services = document.querySelectorAll("[data-animation]");
-
 window.addEventListener("scroll", downAnimation);
 
 function downAnimation(e) {
@@ -39,13 +52,13 @@ function downAnimation(e) {
   const windowTop = window.scrollY + window.innerHeight * 0.85;
   const scrollTop = window.scrollY + window.innerHeight * 0.5;
 
-  // console.log(windowTop)
+
   services.forEach((element) => {
     // element.offsetTop - pega a distancia do elemento até o topo
     if (windowTop > element.offsetTop) {
       element.classList.add("animation");
       sectionMenu(scrollTop);
-    } else element.classList.remove("animation");
+    }
   });
 }
 
@@ -69,10 +82,17 @@ menus.forEach((value) => value.addEventListener("click", scrollId));
 
 function scrollId(e) {
   e.preventDefault();
-  const element = e.target;
-  const to = getScrollTop(element) - 45;
+  if(scrolled === false){
+    const element = e.target;
+    const to = getScrollTop(element) - 45;
 
-  scrollToPosition(to);
+    scrollToPosition(to);
+    scrolled = true;
+
+    setTimeout(() => {
+      scrolled = false;
+    }, 1500);
+  }
 }
 
 function getScrollTop(element) {
@@ -81,12 +101,6 @@ function getScrollTop(element) {
 }
 
 function scrollToPosition(to) {
-  // Funciona em alguns browsers
-  // window.scroll({
-  //     top: to,
-  //     behavior: "smooth"
-  // });
-
   smoothScrollTo(0, to, 2000);
 }
 
@@ -124,7 +138,6 @@ function smoothScrollTo(endX, endY, duration) {
 }
 
 // Slider
-
 function addSlider() {
   const slides = document.querySelectorAll('[data-js="carousel__item"]');
   const nextButton = document.querySelector(
@@ -133,14 +146,19 @@ function addSlider() {
   const prevButton = document.querySelector(
     '[data-js="carousel__button--prev"]'
   );
-  const carousel = document.querySelector(".carousel");
-
-  var countImg = 10;
-  let currentSlideIndex = 0;
   const lastSlideIndex = slides.length - 1;
-  var myTimer;
-  var current = 0;
+  let currentSlideIndex = 0;
+  let myTimer;
+  let current = 0;
 
+  function nextAuto() {
+    myTimer = setInterval(() => {
+      next();
+    }, 3000);
+  }
+  nextAuto();
+
+  manipulateSlidesClasses(currentSlideIndex)
   function manipulateSlidesClasses(currentSlideIndex) {
     slides.forEach((slide) =>
       slide.classList.remove("carousel__item--visible")
@@ -152,17 +170,14 @@ function addSlider() {
   }
 
   nextButton.addEventListener("click", next);
-
   function next() {
     currentSlideIndex === lastSlideIndex
       ? (currentSlideIndex = 0)
       : currentSlideIndex++;
-    // manipulateSlidesClasses(currentSlideIndex);
     slide(currentSlideIndex);
   }
 
   prevButton.addEventListener("click", prev);
-
   function prev() {
     currentSlideIndex === 0
       ? (currentSlideIndex = lastSlideIndex)
@@ -171,19 +186,9 @@ function addSlider() {
     slide(currentSlideIndex);
   }
 
-  function nextAuto() {
-    myTimer = setInterval(() => {
-      next();
-    }, 3000);
-  }
-  nextAuto();
-
   // Balls slider
   const balls = document.querySelector(".reformeds .balls");
-  const lengthImg = document.querySelectorAll(
-    ".reformeds .carousel__item"
-  ).length;
-
+  const lengthImg = document.querySelectorAll(".reformeds .carousel__item").length;
   const image = document.getElementById(current);
 
   for (let i = 0; i < lengthImg; i++) {
@@ -201,15 +206,8 @@ function addSlider() {
   pos.forEach((element) => element.addEventListener("click", clickBalls));
 
   function clickBalls() {
-    // atual = this.id;
-    // slide();
     const id = parseInt(this.id);
     current = id;
-    // const ball = document.getElementById(id);
-    // document.querySelector('.checked').classList.remove('checked');
-    // ball.classList.add('checked')
-
-    // manipulateSlidesClasses(current);
     slide(current);
   }
 
@@ -225,7 +223,6 @@ function addSlider() {
 }
 
 // Contatos
-
 const description = document.querySelector(".contact .title-contact");
 const contacts = document.querySelectorAll(".contacts a[data-name]");
 
@@ -250,7 +247,6 @@ function hideDescription() {
 }
 
 // Adicionando imagens de Reformados dinamicamente
-
 function addImages(objJson) {
   const carouselDynamic = document.getElementById("carousel");
   let append = "";
@@ -260,9 +256,7 @@ function addImages(objJson) {
       append +=
         `
             <div data-js="carousel__item" class="carousel__item carousel__item--visible">
-                <img src="` +
-        element.substr(1) +
-        `" />
+                <img src="` + element.substr(1) + `" />
             </div>
             `;
     }
@@ -275,12 +269,6 @@ function addImages(objJson) {
 }
 
 // Botão mobile
-const icon = document.querySelector(".icon-bars");
-const bar = document.querySelector(".bar");
-const barTop = document.querySelector(".bar-top");
-const barBottom = document.querySelector(".bar-bottom");
-const mobile = document.querySelector(".mobile");
-const overlay = document.querySelector(".overlay");
 
 icon.addEventListener("click", transformIcon);
 
@@ -293,8 +281,6 @@ function transformIcon(e) {
     hideMenu();
   }
 }
-
-const links = document.querySelectorAll(".mobile li a");
 
 links.forEach((link) => link.addEventListener("click", hideMenu));
 
