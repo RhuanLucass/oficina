@@ -4,7 +4,7 @@ let scrolled = false;
 menus.forEach((value) => value.addEventListener("click", scrollId));
 function scrollId(e) {
   e.preventDefault();
-  if(scrolled === false){
+  if (scrolled === false) {
     const element = e.target;
     const to = getScrollTop(element) - 50;
 

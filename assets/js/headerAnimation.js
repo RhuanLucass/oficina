@@ -10,7 +10,6 @@ const mobile = document.querySelector(".desktop");
 const overlay = document.querySelector(".overlay");
 const links = document.querySelectorAll(".desktop li a");
 
-
 window.addEventListener("scroll", navScroll);
 function navScroll(e) {
   if (window.scrollY > 0) {
@@ -18,13 +17,13 @@ function navScroll(e) {
     title.classList.add("h2-less");
     li.forEach((element) => element.classList.add("li-less"));
     ul.forEach((element) => element.classList.add("ul-less"));
-    mobile.classList.add('menu-less');
+    mobile.classList.add("menu-less");
   } else {
     header.classList.remove("header-less");
     title.classList.remove("h2-less");
     li.forEach((element) => element.classList.remove("li-less"));
     ul.forEach((element) => element.classList.remove("ul-less"));
-    mobile.classList.remove('menu-less');
+    mobile.classList.remove("menu-less");
   }
 }
 

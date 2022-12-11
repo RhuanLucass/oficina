@@ -42,7 +42,7 @@
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
-      
+
       <div class="icon-bars">
         <span class="bar-top"></span>
         <span class="bar"></span>
@@ -53,7 +53,7 @@
 
   <main id="inicio" class="shapedividers_com-1134" data-animation="top">
     <div class="text">
-        <div class="container">
+      <div class="container">
         <h1 data-animation="right">Fazendo dos seus sonhos realidade!</h1>
         <p data-animation="left">Faça seu orçamento gratuito e venha renovar a aparência de seu veículo.</p>
       </div>
@@ -171,7 +171,7 @@
   <script src="<?= HOME ?>js/scrollAnimation.js"></script>
   <script src="<?= HOME ?>js/contactAnimation.js"></script>
   <script src="<?= HOME ?>js/slider.js"></script>
-  
+
 </body>
 
 </html>

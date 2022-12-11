@@ -7,7 +7,9 @@ function addImages(objJson) {
       append +=
         `
         <div data-js="carousel__item" class="carousel__item carousel__item--visible">
-            <img src="` + element.substr(1) + `" />
+            <img src="` +
+        element.substr(1) +
+        `" />
         </div>
         `;
     }
@@ -19,13 +21,20 @@ function addImages(objJson) {
 
 function addSlider() {
   const slides = document.querySelectorAll('[data-js="carousel__item"]');
-  const nextButton = document.querySelector('[data-js="carousel__button--next"]');
-  const prevButton = document.querySelector('[data-js="carousel__button--prev"]');
+  const nextButton = document.querySelector(
+    '[data-js="carousel__button--next"]'
+  );
+  const prevButton = document.querySelector(
+    '[data-js="carousel__button--prev"]'
+  );
   const balls = document.querySelector(".renovated .balls");
-  const lengthImg = document.querySelectorAll(".renovated .carousel__item").length;
+  const lengthImg = document.querySelectorAll(
+    ".renovated .carousel__item"
+  ).length;
   const pos = document.querySelectorAll(".renovated .balls .ball");
   const lastSlideIndex = slides.length - 1;
-  let myTimer, currentSlideIndex = current = 0;
+  let myTimer,
+    currentSlideIndex = (current = 0);
 
   function nextAuto() {
     myTimer = setInterval(() => {
@@ -34,7 +43,7 @@ function addSlider() {
   }
   nextAuto();
 
-  manipulateSlidesClasses(currentSlideIndex)
+  manipulateSlidesClasses(currentSlideIndex);
   function manipulateSlidesClasses(currentSlideIndex) {
     slides.forEach((slide) =>
       slide.classList.remove("carousel__item--visible")
@@ -88,4 +97,3 @@ function addSlider() {
   }
   slide(current);
 }
-

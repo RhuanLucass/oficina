@@ -1,8 +1,12 @@
 const description = document.querySelector(".contact .title-contact");
 const contacts = document.querySelectorAll(".contacts a[data-name]");
 
-contacts.forEach((contact) => contact.addEventListener("mouseover", showDescription));
-contacts.forEach((contact) => contact.addEventListener("mouseout", hideDescription));
+contacts.forEach((contact) =>
+  contact.addEventListener("mouseover", showDescription)
+);
+contacts.forEach((contact) =>
+  contact.addEventListener("mouseout", hideDescription)
+);
 
 function showDescription() {
   const dataName = this.getAttribute("data-name");
