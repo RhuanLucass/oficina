@@ -2,9 +2,6 @@
 <html lang="pt-br">
 
 <head>
-  <?php
-  define('HOME', 'http://localhost/Projetos%20Novos/oficina/assets/');
-  ?>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +9,6 @@
   <meta name="title" content="Oficina Santo Expedito - Seu veículo em boas mãos">
   <meta name="description" content="Oferecemos serviços de alta qualidade em funilaria e pintura com um preço especial para seus veículos.">
   <!-- <link rel="canonical" href=""> -->
-  <base id="urlHome" href="<?= HOME ?>">
 
   <!-- Fonts -->
 
@@ -22,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="<?= HOME ?>css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -100,13 +96,39 @@
       <h2 class="title">Reformados</h2>
       <p>Confira alguns de nossos serviços realizados.</p>
       <div class="carousel" id="carousel" data-animation="bottom">
+        <div data-js="carousel__item" class="carousel__item carousel__item--visible">
+          <img src="assets/images/cars/car1.jpg" />
+        </div>
+        <div data-js="carousel__item" class="carousel__item carousel__item--visible">
+          <img src="assets/images/cars/car2.jpg" />
+        </div>
+        <div data-js="carousel__item" class="carousel__item carousel__item--visible">
+          <img src="assets/images/cars/car3.jpg" />
+        </div>
+        <div data-js="carousel__item" class="carousel__item carousel__item--visible">
+          <img src="assets/images/cars/car4.jpg" />
+        </div>
+        <div data-js="carousel__item" class="carousel__item carousel__item--visible">
+          <img src="assets/images/cars/car5.jpg" />
+        </div>
+        <div data-js="carousel__item" class="carousel__item carousel__item--visible">
+          <img src="assets/images/cars/car6.jpg" />
+        </div>
+
         <div class="carousel__actions">
           <button data-js="carousel__button--prev" aria-label="Slide anterior"><i class="fa-solid fa-chevron-up"></i></button>
 
           <button data-js="carousel__button--next" aria-label="Próximo slide"><i class="fa-solid fa-chevron-up"></i></button>
         </div>
 
-        <div class="balls"></div>
+        <div class="balls">
+          <div class="ball checked" id="0"></div>
+          <div class="ball" id="1"></div>
+          <div class="ball" id="2"></div>
+          <div class="ball" id="3"></div>
+          <div class="ball" id="4"></div>
+          <div class="ball" id="5"></div>
+        </div>
       </div>
     </div>
   </section><!-- renovated -->
@@ -141,7 +163,7 @@
 
         <div class="form-contact">
           <h3>Enviar Mensagem</h3>
-          <form data-animation="right" method="POST" action="php/contact.php">
+          <form data-animation="right" method="POST">
             <label for="input-name" hidden>Nome</label>
             <input id="input-name" type="text" name="name" placeholder="Seu Nome" required>
             <label for="input-email" hidden>E-mail</label>
@@ -165,12 +187,11 @@
   </footer>
 
   <script src="https://kit.fontawesome.com/dc951fd168.js" crossorigin="anonymous"></script>
-  <script src="<?= HOME ?>js/ajax.js"></script>
-  <script src="<?= HOME ?>js/headerAnimation.js"></script>
-  <script src="<?= HOME ?>js/sectionsAnimation.js"></script>
-  <script src="<?= HOME ?>js/scrollAnimation.js"></script>
-  <script src="<?= HOME ?>js/contactAnimation.js"></script>
-  <script src="<?= HOME ?>js/slider.js"></script>
+  <script src="assets/js/headerAnimation.js"></script>
+  <script src="assets/js/sectionsAnimation.js"></script>
+  <script src="assets/js/scrollAnimation.js"></script>
+  <script src="assets/js/contactAnimation.js"></script>
+  <script src="assets/js/slider.js"></script>
 
 </body>
 

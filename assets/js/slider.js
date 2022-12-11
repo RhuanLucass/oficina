@@ -1,24 +1,4 @@
-function addImages(objJson) {
-  const carouselDynamic = document.getElementById("carousel");
-  let append = "";
-  let count = 0;
-  objJson.forEach((element) => {
-    if (count < 15) {
-      append +=
-        `
-        <div data-js="carousel__item" class="carousel__item carousel__item--visible">
-            <img src="` +
-        element.substr(1) +
-        `" />
-        </div>
-        `;
-    }
-    count++;
-  });
-  carouselDynamic.insertAdjacentHTML("afterbegin", append); //Inserindo antes do conteúdo da div
-  addSlider();
-}
-
+addSlider();
 function addSlider() {
   const slides = document.querySelectorAll('[data-js="carousel__item"]');
   const nextButton = document.querySelector(
@@ -68,14 +48,6 @@ function addSlider() {
       ? (currentSlideIndex = lastSlideIndex)
       : currentSlideIndex--;
     slide(currentSlideIndex);
-  }
-
-  for (let i = 0; i < lengthImg; i++) {
-    const div = document.createElement("div");
-    div.id = i;
-    div.classList.add("ball");
-
-    balls.appendChild(div);
   }
 
   document.getElementById("0").classList.add("checked");
