@@ -1,21 +1,19 @@
 const header = document.querySelector("header");
-const title = document.querySelector("header .logo h1");
+const title = document.querySelector("header .logo h2");
+const ul = document.querySelectorAll("header nav ul");
 const li = document.querySelectorAll("header nav ul li");
-const menuDesktop = document.querySelectorAll('header .desktop ul li a[href^="#"]');
 const menus = document.querySelectorAll('header ul li a[href^="#"]');
 let scrolled = false;
 const services = document.querySelectorAll("[data-animation]");
-
 
 const icon = document.querySelector(".icon-bars");
 const bar = document.querySelector(".bar");
 const barTop = document.querySelector(".bar-top");
 const barBottom = document.querySelector(".bar-bottom");
-const mobile = document.querySelector(".mobile");
+const mobile = document.querySelector(".desktop");
 const overlay = document.querySelector(".overlay");
 
-const links = document.querySelectorAll(".mobile li a");
-
+const links = document.querySelectorAll(".desktop li a");
 
   
 // Animação menu
@@ -23,23 +21,29 @@ window.addEventListener("scroll", navScroll);
 
 function navScroll(e) {
   if (window.scrollY > 0) {
-    header.classList.add("headerh");
-    title.classList.add("h1-less");
+    header.classList.add("header-less");
+    title.classList.add("h2-less");
     li.forEach((element) => element.classList.add("li-less"));
+    ul.forEach((element) => element.classList.add("ul-less"));
+    mobile.classList.add('menu-less');
   } else {
-    header.classList.remove("headerh");
-    title.classList.remove("h1-less");
+    header.classList.remove("header-less");
+    title.classList.remove("h2-less");
     li.forEach((element) => element.classList.remove("li-less"));
+    ul.forEach((element) => element.classList.remove("ul-less"));
+    mobile.classList.remove('menu-less');
   }
 }
 
 // Animação main
 const main = document.querySelector("main");
 const h1 = document.querySelector("main .text h1");
+const p = document.querySelector("main .text p");
 
 function animationMain(){
   main.classList.add("animation");
   h1.classList.add("animation");
+  p.classList.add("animation");
 }
 animationMain();
 
@@ -48,14 +52,11 @@ window.addEventListener("scroll", downAnimation);
 
 function downAnimation(e) {
   e.preventDefault();
-  // window.scrollY - pega a distância que está do topo
-  // window.innerHeight - pega a altura da janela
   const windowTop = window.scrollY + window.innerHeight * 0.85;
   const scrollTop = window.scrollY + window.innerHeight * 0.5;
 
 
   services.forEach((element) => {
-    // element.offsetTop - pega a distancia do elemento até o topo
     if (windowTop > element.offsetTop) {
       element.classList.add("animation");
       sectionMenu(scrollTop);
@@ -65,14 +66,14 @@ function downAnimation(e) {
 
 // Select menu
 function sectionMenu(scrollTop) {
-  menuDesktop.forEach((link) => {
+  menus.forEach((link) => {
     const href = link.getAttribute("href");
     const element = document.querySelector(href);
     const posSection = element.offsetTop;
     const height = element.clientHeight;
-
-    if (posSection <= scrollTop && posSection + height > scrollTop) {
-      menuDesktop.forEach((el) => el.classList.remove("select"));
+    
+    if (scrolled === false && posSection <= scrollTop && posSection + height > scrollTop) {
+      menus.forEach((el) => el.classList.remove("select"));
       link.classList.add("select");
     }
   });
@@ -85,7 +86,7 @@ function scrollId(e) {
   e.preventDefault();
   if(scrolled === false){
     const element = e.target;
-    const to = getScrollTop(element) - 45;
+    const to = getScrollTop(element) - 50;
 
     scrollToPosition(to);
     scrolled = true;
@@ -105,12 +106,6 @@ function scrollToPosition(to) {
   smoothScrollTo(0, to, 2000);
 }
 
-/**
- * Smooth scroll animation
- * @param {int} endX: destination x coordinate
- * @param {int} endY: destination y coordinate
- * @param {int} duration: animation duration in ms
- */
 function smoothScrollTo(endX, endY, duration) {
   const startX = window.scrollX || window.pageXOffset;
   const startY = window.scrollY || window.pageYOffset;
@@ -183,13 +178,12 @@ function addSlider() {
     currentSlideIndex === 0
       ? (currentSlideIndex = lastSlideIndex)
       : currentSlideIndex--;
-    // manipulateSlidesClasses(currentSlideIndex);
     slide(currentSlideIndex);
   }
 
   // Balls slider
-  const balls = document.querySelector(".reformeds .balls");
-  const lengthImg = document.querySelectorAll(".reformeds .carousel__item").length;
+  const balls = document.querySelector(".renovated .balls");
+  const lengthImg = document.querySelectorAll(".renovated .carousel__item").length;
   const image = document.getElementById(current);
 
   for (let i = 0; i < lengthImg; i++) {
@@ -202,7 +196,7 @@ function addSlider() {
 
   document.getElementById("0").classList.add("checked");
 
-  const pos = document.querySelectorAll(".reformeds .balls .ball");
+  const pos = document.querySelectorAll(".renovated .balls .ball");
 
   pos.forEach((element) => element.addEventListener("click", clickBalls));
 
@@ -289,7 +283,7 @@ function hideMenu() {
   bar.classList.remove("rotate");
   barTop.classList.remove("rotate-top");
   barBottom.classList.remove("rotate-bottom");
-  mobile.classList.toggle("mobile-toggle");
+  mobile.classList.toggle("desktop-toggle");
   overlay.style.display = "none";
 }
 
@@ -297,7 +291,7 @@ function showMenu() {
   bar.classList.add("rotate");
   barTop.classList.add("rotate-top");
   barBottom.classList.add("rotate-bottom");
-  mobile.classList.toggle("mobile-toggle");
+  mobile.classList.toggle("desktop-toggle");
   overlay.style.display = "block";
 }
 
