@@ -166,7 +166,11 @@
 
   <script src="https://kit.fontawesome.com/dc951fd168.js" crossorigin="anonymous"></script>
   <script src="<?= HOME ?>js/ajax.js"></script>
-  <script src="<?= HOME ?>js/script.js"></script>
+  <script src="<?= HOME ?>js/headerAnimation.js"></script>
+  <script src="<?= HOME ?>js/sectionsAnimation.js"></script>
+  <script src="<?= HOME ?>js/scrollAnimation.js"></script>
+  <script src="<?= HOME ?>js/contactAnimation.js"></script>
+  <script src="<?= HOME ?>js/slider.js"></script>
   
 </body>
 

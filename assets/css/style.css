@@ -55,6 +55,12 @@ p {
   line-height: 1;
 }
 
+a, img{
+  user-drag: none;
+  -webkit-user-drag: none;
+}
+
+
 main,
 section {
   overflow: hidden;
