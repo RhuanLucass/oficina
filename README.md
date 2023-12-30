@@ -31,6 +31,10 @@ The primary purpose of this project was skill enhancement in development, aiming
 
 All images used in this project are for illustrative purposes and were sourced from the internet. They are used solely as examples to represent the services offered by the workshop.
 
+## No PHP
+
+Development of a branch without PHP was undertaken to provide an alternative version of the project suitable for deployment on GitHub Pages. This approach facilitates the project's demonstration and sharing by removing server-side dependencies, ensuring a smooth display and interaction with the website for users viewing it through the GitHub Pages platform. This branch aims to offer a seamless browsing experience without the need for a server environment, allowing broader accessibility and easy sharing of the project's functionalities and design.
+
 ## How to use
 
 - Access the page link on github: [Automotive Workshop](https://rhuanlucass.github.io/oficina/)
