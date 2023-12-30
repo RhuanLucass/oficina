@@ -8,8 +8,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oficina Santo Expedito - Seu veículo em boas mãos</title>
-  <meta name="title" content="Oficina Santo Expedito - Seu veículo em boas mãos">
+  <title>Oficina Lorem Ipsum - Seu veículo em boas mãos</title>
+  <meta name="title" content="Oficina Lorem Ipsum - Seu veículo em boas mãos">
   <meta name="description" content="Oferecemos serviços de alta qualidade em funilaria e pintura com um preço especial para seus veículos.">
   <!-- <link rel="canonical" href=""> -->
   <base id="urlHome" href="<?= HOME ?>">
@@ -31,7 +31,7 @@
     <div class="container">
       <div class="logo">
         <h6>Oficina</h6>
-        <h2>Santo Expedito</h2>
+        <h2>Lorem Ipsum</h2>
       </div>
       <nav class="desktop">
         <ul>
@@ -160,7 +160,7 @@
 
   <footer>
     <div class="container">
-      <p>Todos os direitos reservados <b>Oficina Santo Expedito</b>&reg;</p>
+      <p>Todos os direitos reservados <b>Oficina Lorem Ipsum</b>&reg;</p>
     </div>
   </footer>
 
