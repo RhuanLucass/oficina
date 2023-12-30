@@ -6,6 +6,10 @@ This project involves creating a website for an automotive workshop, developed w
 
 The primary purpose of this project was skill enhancement in development, aiming to finalize it as the functional website of an automotive workshop. The page features a prominent section with a representative image of a refurbished vehicle, accompanied by an invitation for visitors to request quotes. Additionally, the website includes detailed sections about the services offered, a carousel displaying completed works, information about the workshop, and a contact area for direct interaction with clients.
 
+## Preview
+
+![Preview](https://github.com/RhuanLucass/oficina/blob/master/assets/images/oficina.png)
+
 ## Key Features
 
 - Development using PHP, HTML, CSS, and JS.
@@ -26,10 +30,6 @@ The primary purpose of this project was skill enhancement in development, aiming
 ### Note About Images
 
 All images used in this project are for illustrative purposes and were sourced from the internet. They are used solely as examples to represent the services offered by the workshop.
-
-## Preview
-
-![Preview](https://github.com/RhuanLucass/oficina/blob/master/assets/images/oficina.png)
 
 ## How to use
 
